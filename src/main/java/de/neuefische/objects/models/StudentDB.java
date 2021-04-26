@@ -54,11 +54,11 @@ public class StudentDB {
 
     public void removeStudent(Student remStudent){
         Student[] remStudentArray = new Student[(studentArray.length-1)];
-        for (int i = 0; i < studentArray.length; i++){
-            if (!studentArray[i].equals(remStudent)){
+        for (int i = 0; i < studentArray.length; i++) {
+            if (!studentArray[i].equals(remStudent)) {
                 remStudentArray[i] = studentArray[i];
             }
-        studentArray = remStudentArray;
         }
+        studentArray = remStudentArray;
     }
 }
