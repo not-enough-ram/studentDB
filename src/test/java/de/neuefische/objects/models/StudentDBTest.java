@@ -1,8 +1,10 @@
 package de.neuefische.objects.models;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import java.util.Arrays;
+
 
 class StudentDBTest {
 
@@ -15,7 +17,7 @@ class StudentDBTest {
         Student[] actual = given.getList();
 
         // THEN
-        assertEquals(studentArray, actual);
+        Assertions.assertEquals(studentArray, actual);
     }
 
     @Test
@@ -29,6 +31,38 @@ class StudentDBTest {
         String actual = given.toString();
 
         //THEN
-        assertEquals(expected, actual);
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
+    void addStudent() {
+        // GIVEN
+        Student[] studentArray = {new Student("Peter", "Pan", "42"), new Student("Heiner", "Lauterbach", "100"), new Student("111", "222" , "333")};
+        Student wayne = new Student("Boris","Palmer","42");
+        Student[] expectedArray = {new Student("Peter", "Pan", "42"), new Student("Heiner", "Lauterbach", "100"), new Student("111", "222" , "333"), new Student("Boris","Palmer","42")};
+        StudentDB given = new StudentDB(studentArray);
+
+        // WHEN
+        given.addStudent(wayne);
+        Student[] actualArray = given.getList();
+
+        // THEN
+        Assertions.assertEquals(Arrays.stream(expectedArray).toList(), Arrays.stream(actualArray).toList());
+    }
+
+    @Test
+    void removeStudent() {
+        // GIVEN
+        Student[] expectedArray = {new Student("Peter", "Pan", "42"), new Student("Heiner", "Lauterbach", "100"), new Student("111", "222" , "333")};
+        Student wayne = new Student("Boris","Palmer","42");
+        Student[] studentArray = {new Student("Peter", "Pan", "42"), new Student("Heiner", "Lauterbach", "100"), new Student("111", "222" , "333"), new Student("Boris","Palmer","42")};
+        StudentDB given = new StudentDB(studentArray);
+
+        // WHEN
+        given.removeStudent(wayne);
+        Student[] actualArray = given.getList();
+
+        // THEN
+        Assertions.assertEquals(Arrays.stream(expectedArray).toList(), Arrays.stream(actualArray).toList());
     }
 }

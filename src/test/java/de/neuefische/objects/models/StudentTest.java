@@ -49,7 +49,7 @@ public class StudentTest {
     public void toStringTest(){
         // GIVEN
         Student bestStudent = new Student("Boris", "Johnson", "4");
-        String expected = "Boris,Johnson,4";
+        String expected = "Student{firstName='Boris', lastName='Johnson', id=4}";
 
         // WHEN
         String actual = bestStudent.toString();
