@@ -15,10 +15,10 @@ public class AppMain {
         bestDB.removeStudent(wayne);
         System.out.println(bestDB.toString());
 
-        System.out.println(bestDB.randomStudent());
-        System.out.println(bestDB.randomStudent());
-        System.out.println(bestDB.randomStudent());
-        System.out.println(bestDB.randomStudent());
-        System.out.println(bestDB.randomStudent());
+        System.out.println(bestDB.randomStudent().toString());
+        System.out.println(bestDB.randomStudent().toString());
+        System.out.println(bestDB.randomStudent().toString());
+        System.out.println(bestDB.randomStudent().toString());
+        System.out.println(bestDB.randomStudent().toString());
     }
 }

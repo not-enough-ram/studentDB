@@ -24,10 +24,10 @@ public class StudentDB {
         this.studentArray = studentArray;
     }
 
-    public String randomStudent(){
+    public Student randomStudent(){
         int range = studentArray.length;
         int rand = (int)(Math.random()*range);
-        return studentArray[rand].toString();
+        return studentArray[rand];
     }
 
     @Override
